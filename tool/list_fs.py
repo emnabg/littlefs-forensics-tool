@@ -165,7 +165,6 @@ def main(argv: List[str] | None = None) -> None:
     # 5) Mount & bail if it fails (non‑zero return)
     if fs.mount() != 0:
         sys.exit("Failed to mount image – invalid super‑block or wrong geometry")
-
     print(f"Mounted '{args.image}' ({len(buf)//1024} KiB, {block_count} blocks)\n/")
     _print_tree(fs)
 

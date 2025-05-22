@@ -38,12 +38,12 @@ fh = lfs.file_open(fs, "temp/to-be-deleted.txt", "w")
 lfs.file_write(fs, fh, b"This file will be deleted\n")
 lfs.file_close(fs, fh)
 
-lfs.remove(fs, "temp/to-be-deleted.txt")
 
+lfs.remove(fs, "temp/to-be-deleted.txt")
 # Unmount filesystem
 lfs.unmount(fs)
 
 # Dump binary image
-with open("FlashMemory.bin", "wb") as out:
+with open("Flashmemory.bin", "wb") as out:
     out.write(cfg.user_context.buffer)
 
