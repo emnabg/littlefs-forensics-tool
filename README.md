@@ -37,7 +37,7 @@ I’ve tried to make the purpose of each file as clear as possible. If anything 
 ### `tool/`
 
 - **`list_fs.py`**: Lists the directory tree and optionally dumps the contents of all files.
-- **`superblock.py`**: Parses and prints the superblock (version, block size, root pair, etc.).
+- **`superblock.py`**: Parses and prints the superblock (version, block size etc.).
 - **`scan.py`**: This script dumps and decodes the contents of all blocks in a LittleFS image, showing parsed metadata tags (NAME, STRUCT, CRC, etc.) for each,It provides a readable breakdown of each block, including tag offsets, types, IDs, lengths, and payloads.
 - **`recover_files.py`**: Recovers a deleted inline file by name .
 - **`data_struct_dump.txt`**: Output of scan.py.
@@ -48,7 +48,7 @@ I’ve tried to make the purpose of each file as clear as possible. If anything 
 ### Root Directory
 
 - **`requirements.txt`**: Contains Python dependencies (`littlefs-python`).
-- **`README.md`**: This file — an overview of the project, usage, and structure.
+- **`README.md`**
 -  **`report.pdf`**: Final project report documenting the full forensic analysis process, design exploration, implementation steps, and observations.
 
 
