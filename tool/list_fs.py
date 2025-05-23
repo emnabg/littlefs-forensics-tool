@@ -1,6 +1,6 @@
 
 """
-forensic_analysis_littlefs.py  –  LittleFS image inspector
+list_fs.py  –  LittleFS image inspector
 ========================================================
 
 A minimal forensic helper that **mounts an existing LittleFS disk image held in
