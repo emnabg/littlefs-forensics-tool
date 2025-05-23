@@ -4,10 +4,10 @@ import sys
 def extract_superblock_summary(buf, default_block_size=512):
     for block_id in (0, 1):  # Try block 0 and 1
         start = block_id * default_block_size
-        magic = buf[start + 8 : start + 16]
+        magic = buf[start + 8 : start + 16] #the littlefs magic word (8bytes long)
         MAGIC_OFF     = 8
-        TAG201_OFF    = MAGIC_OFF + 8  # start+16 … start+19 → 0x201xxxxx
-        FIELDS_OFF    = TAG201_OFF + 4 # start+20 …          → real fields
+        TAG201_OFF    = MAGIC_OFF + 8  # start+16 … start+19(the inline struct name tag , type 0x201)
+        FIELDS_OFF    = TAG201_OFF + 4 # start+20 … (the payload of the inline struct, 24 bytes long)
         if magic == b'littlefs':
             version, block_size, block_count, name_max, file_max, attr_max = struct.unpack_from("<IIIIII", buf, start + FIELDS_OFF)
             print(f"[SUPERBLOCK @ block {block_id}]")
